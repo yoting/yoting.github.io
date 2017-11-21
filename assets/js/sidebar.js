@@ -7,14 +7,14 @@ $( document ).ready(function() {
 	quickMenu.click(function(){
 		quickMenuDown.toggle(1000);
 		if(quickMenuLeft.attr("src").endsWith("open.png")){
-			quickMenuLeft.attr("src","/blog/assets/ico/yanjing_close.png");
+			quickMenuLeft.attr("src","/assets/ico/yanjing_close.png");
 		}else{
-			quickMenuLeft.attr("src","/blog/assets/ico/yanjing_open.png");
+			quickMenuLeft.attr("src","/assets/ico/yanjing_open.png");
 		}
 		if(quickMenuRight.attr("src").endsWith("open.png")){
-			quickMenuRight.attr("src","/blog/assets/ico/yanjing_close.png");
+			quickMenuRight.attr("src","/assets/ico/yanjing_close.png");
 		}else{
-			quickMenuRight.attr("src","/blog/assets/ico/yanjing_open.png");
+			quickMenuRight.attr("src","/assets/ico/yanjing_open.png");
 		}
 	})
 
@@ -42,16 +42,16 @@ $( document ).ready(function() {
 	var showInfo  =  $("#show-info");
 	var codeImg = $("#code-img");
 	myinfo.mouseover(function(){
-		codeImg.attr("src","/blog/assets/yoting/image/myinfo_code.png");
+		codeImg.attr("src","/assets/yoting/image/myinfo_code.png");
 	});
 	myinfo.mouseout(function(){
-		codeImg.attr("src","/blog/assets/yoting/image/home_code.png");
+		codeImg.attr("src","/assets/yoting/image/home_code.png");
 	});
 	webinfo.mouseover(function(){
-		codeImg.attr("src","/blog/assets/yoting/image/webinfo_code.png");
+		codeImg.attr("src","/assets/yoting/image/webinfo_code.png");
 	});
 	webinfo.mouseout(function(){
-		codeImg.attr("src","/blog/assets/yoting/image/home_code.png");
+		codeImg.attr("src","/assets/yoting/image/home_code.png");
 	});
 
 	//获得当前时间,刻度为一千分一秒
