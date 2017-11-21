@@ -1,0 +1,2 @@
+layout-default其实就是include-default.html
+layout-post-page其实就是layout-default

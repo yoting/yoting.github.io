@@ -1,0 +1,56 @@
+﻿# visit https://github.com/mojombo/jekyll/wiki/Configuration for more settings
+
+gems: [jekyll-paginate]
+paginate: 5 # pagination based on number of posts
+paginate_path: "page:num"
+permalink: /:categories/:year/:month/:day/:title/
+exclude: ["README.txt"] # files to exclude
+highlighter: pygments
+#markdown: kramdown
+#kramdown:
+#  input: GFM
+#  extensions:
+#    - autolink
+#    - footnotes
+#    - smart
+#  use_coderay: true
+#  syntax_highlighter: rouge
+#  coderay:
+#    coderay_line_numbers:  nil
+markdown: redcarpet
+redcarpet:
+  extensions: ["no_intra_emphasis", "tables", "autolink", "strikethrough", "fenced_code_blocks", "with_toc_data"]
+
+#source: DIR
+#destination: ../yoting.github.io
+include: [home]  #除了_post文件夹下的需要解析外，自定义_home下的也需要解析
+
+defaults:
+  -
+    scope:
+      path: "" # empty string for all files
+    values:
+      title: 孤思八九
+
+description: 生命不息，折腾不止，孤独思考，不瞎折腾！
+author:
+  name: 邓孤思
+  email: dyy_gusi@sina.com
+  github: yoting
+  #weibo: http://weibo.com/dyygusi
+  #twitter: none
+  #pinterest: asd123
+  #linkedin: asd123
+  webname: 孤思八九
+  bio_sidebar: 生命不息  折腾不止
+  bio: 生命不息，折腾不止，孤独思考，不瞎折腾！
+  #email_md5: 726351295ec82e145928582f595aa3aa
+
+rss_path: feed.xml
+categories_path: home/categories.html #文章分类页面
+tags_path: home/tags.html #文章标签页面
+webinfo_path: home/about/webinfo
+myinfo_path: home/about/myinfo
+resume_path: home/about/resume
+
+BASE_PATH: /

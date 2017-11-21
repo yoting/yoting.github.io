@@ -1,0 +1,114 @@
+﻿<!-- sidebar.html -->
+<nav class="navbar navbar-default" role="navigation" style="margin-top: -22px;">
+    <div id="quick-menu-div" style="text-align: center;height: 43px; padding-top: 5px;" class="col-sm-12">
+	   <a href="{{ site.BASE_PATH}}/{{ site.categories_path}}"><img src="{{ site.BASE_PATH}}/assets/ico/yanjing_close.png" id="yanjing-left" class="col-sm-4"></a>
+       <img src="{{ site.BASE_PATH}}/assets/ico/mouth.jpg" id="quick-menu" class="col-sm-4">
+	   <!--<span class="col-sm-4" id="quick-menu" style="color:#000;padding-top: 8px; padding-bottom: 0px;">快&nbsp;捷&nbsp;菜&nbsp;单</span>-->
+	   <a href="{{ site.BASE_PATH}}/{{ site.tags_path}}"><img src="{{ site.BASE_PATH}}/assets/ico/yanjing_close.png" id="yanjing-right" class="col-sm-4"></a>
+    </div>
+    <div id="show-quick-menu-down" style="display:none;"></div>
+    <div id="quick-menu-down">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <hr class="divider">
+            <ul class="nav navbar-nav">
+                <li><a href="{{ site.BASE_PATH}}/"><i class="fa fa-home"></i>返回首页</a></li>
+                <li><a href="#"><i class="fa fa-arrow-up"></i>返回顶端</a></li>
+                <li><a href="{{ site.BASE_PATH}}/{{ site.categories_path }}"><i class="fa fa-folder"></i>博文分类</a></li>
+                <li><a href="{{ site.BASE_PATH}}/{{ site.tags_path }}"><i class="fa fa-tags"></i>标签分类</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<header class="sidebar-header" role="banner">
+    <a href="{{ site.BASE_PATH }}/">
+        <img src="{{site.BASE_PATH}}/assets/yoting/image/logo.jpg" class="img-circle" style="width:150px; height=150px; " />
+    </a>
+    <h3 class="title">
+        <a href="{{ site.BASE_PATH }}">{{ site.author.webname }}</a>
+    </h3>
+</header>
+<!-- nav-menu-dropdown -->
+<!--
+<div class="btn-group hidden-xs" id="nav-menu" style="left: 45px;">
+	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+		<i class="fa fa-bars" style="width:180px;"> 快 捷 菜 单</i>
+	</button>
+	
+</div>
+-->
+{% if site.author.bio_sidebar %}
+<div id="bio" class="text-center">
+    <h4>{{ site.author.bio_sidebar }}</h4>
+</div>
+{% endif %}
+<div id="contact-list" class="text-center" style="margin-top: 30px;">
+    <ul class="list-unstyled list-inline">
+        {% if site.author.github %}
+        <li>
+            <a class="btn btn-default btn-sm" href="https://github.com/{{ site.author.github }}">
+                <i class="fa fa-github-alt fa-lg"></i>
+            </a>
+        </li>
+        {% endif %} {% if site.author.email %}
+        <li>
+            <a class="btn btn-default btn-sm" href="mailto:{{ site.author.email }}">
+                <i class="fa fa-envelope fa-lg"></i>
+            </a>
+        </li>
+        {% endif %}
+        {% if site.author.weibo %}
+        <li>
+            <a class="btn btn-default btn-sm" href="{{ site.author.weibo }}">
+                <i class="fa fa-envelope fa-lg"></i>
+            </a>
+        </li>
+        {% endif %}
+        <li>
+            <a class="btn btn-default btn-sm" href="{{ site.BASE_PATH }}/{{ site.rss_path }}">
+                <i class="fa fa-rss fa-lg"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+<br>
+<!--
+<div id="show-info" class="col-sm-12 text-center" style="">
+    <img id="code-img" src="{{ site.BASE_PATH}}/assets/yoting/image/home_code.png" style="width:180px; height:180px; margin-top:10px; ">
+</div>
+-->
+<!--
+<div style="font-size: 16px; font-family: Microsoft YaHei; margin-top:30px;" class="col-sm-12 text-center">
+    <SCRIPT language=JavaScript>
+    var today = new Date();
+
+    function initArray() {
+        this.length = initArray.arguments.length
+        for (var i = 0; i < this.length; i++)
+            this[i + 1] = initArray.arguments[i]
+    }
+    var d = new initArray("星期日", "星期一", "星期二", "星期三",
+        "星期四", "星期五", "星期六");
+    document.write("<font color=#0099ff> ", today
+        .getYear() + 1900, "年", today.getMonth() + 1,
+        "月", today.getDate(), "日 ",
+        d[today.getDay() + 1], "</font><br/>");
+    </SCRIPT>
+</div>
+-->
+<!--
+<div style="margin-left: 0px; padding-left: 0px;" class="col-sm-12">
+    <iframe width="200" height="100" frameborder="0" src="http://i.tianqi.com/index.php?c=code&amp;id=35&amp;icon=1&amp;num=3" allowtransparency="true" scrolling="no"></iframe>
+</div>
+-->
+<div class="text-center navbar-fixed-bottom col-sm-2" style="margin-bottom: 20px;">
+    {% if site.myinfo_path %}
+    <span class="col-sm-4" id="myinfo"><a href="{{ site.BASE_PATH }}/{{ site.myinfo_path }}">关于博主</a></span>
+    {% endif %}
+    {% if site.resume_path %}
+    <span class="col-sm-4" id="resume"><a href="{{ site.BASE_PATH }}/{{ site.resume_path }}">个人简历</a></span>
+    {% endif %}
+    {% if site.webinfo_path %}
+    <span class="col-sm-4" id="webinfo"><a href="{{ site.BASE_PATH }}/{{ site.webinfo_path }}">关于本站</a></span>
+    {% endif %}
+</div>
+<!-- sidebar.html end -->
