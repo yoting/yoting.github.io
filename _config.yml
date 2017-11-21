@@ -53,4 +53,4 @@ webinfo_path: home/about/webinfo
 myinfo_path: home/about/myinfo
 resume_path: home/about/resume
 
-BASE_PATH: /
+BASE_PATH: 
