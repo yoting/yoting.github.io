@@ -78,17 +78,13 @@ tags: logback
 　　
 ### 二、logback配置文件详细说明
 
-- **根节点configuration**：
-
-&ensp;&ensp;&ensp;&ensp;包含如下属性：
+- **根节点configuration**：包含如下属性：
 
 	- scan:当此属性设置为true时，配置文件如果发生改变，将会被重新加载，默认值为true。
 	- scanPeriod:设置监测配置文件是否有修改的时间间隔，如果没有给出时间单位，默认单位是毫秒。当scan为true时，此属性生效。默认的时间间隔为1分钟。
 	- debug:当此属性设置为true时，将打印出logback内部日志信息，实时查看logback运行状态。默认值为false。
 
-- **根节点的子节点logger**:
-
-&ensp;&ensp;&ensp;&ensp;用来设置某一个包或者具体的某一个类的日志打印级别、以及指定appender。loger仅有一个name属性，一个可选的level和一个可选的addtivity属性。属性：
+- **根节点的子节点logger**:用来设置某一个包或者具体的某一个类的日志打印级别、以及指定appender。loger仅有一个name属性，一个可选的level和一个可选的addtivity属性。属性：
 
 	- name:用来指定受此loger约束的某一个包或者具体的某一个类。
 	- level:用来设置打印级别，大小写无关：TRACE, DEBUG, INFO, WARN, ERROR, ALL 和 OFF，还有一个特俗值INHERITED或者同义词NULL，代表强制执行上级的级别。如果未设置此属性，那么当前loger将会继承上级的级别。
@@ -116,9 +112,8 @@ loger可以包含零个或多个appender-ref元素，标识这个appender将会�
 - **filter**子节点：日志输出过滤器，可设置输入日志级别等。
 - **rollingPolicy**子节点：当发生滚动时，决定 RollingFileAppender 的行为，涉及文件移动和重命名。
 - **triggeringPolicy**子节点： 告知 RollingFileAppender 何时激活滚动。
-- **encoder**子节点：
-　　encoder负责两件事，一是把日志信息转换成字节数组，二是把字节数组写入到输出流。目前PatternLayoutEncoder 是唯一有用的且默认的encoder ，它有一个<pattern>节点，用来设置日志的输入格式。使用“%”加“转换符”方式，如果要输出“%”，则必须用“\”对“\%”进行转义。
-	- pattern节点是对日志输出格式进行控制，pattern的转换符号如下：（注意需要使用%加转换符的方式）
+- **encoder**子节点：encoder负责两件事，一是把日志信息转换成字节数组，二是把字节数组写入到输出流。目前PatternLayoutEncoder 是唯一有用的且默认的encoder ，它有一个<pattern>节点，用来设置日志的输入格式。使用“%”加“转换符”方式，如果要输出“%”，则必须用“\”对“\%”进行转义。
+- pattern节点是对日志输出格式进行控制，pattern的转换符号如下：（注意需要使用%加转换符的方式）
 		- F / file	       输出执行记录请求的java源文件名。尽量避免使用，除非执行速度不造成任何问题。
 		- L / line	       输出执行日志请求的行号。尽量避免使用，除非执行速度不造成任何问题。
 		- m / msg / message	输出应用程序提供的信息。

@@ -4,5 +4,9 @@ default.html中
 	左侧为saidbar.html
 	右侧为content：/index.html
 
-点击文章，到达post.html
-如果为单一一面，到达page.html中
+saidbar中
+	包含tags.html
+
+content中
+	点击文章，content:/post.html
+	如果为单一页面，content:/page.html
