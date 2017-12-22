@@ -6,17 +6,23 @@ categories: "Overall"
 tags: logback
 ---
 
-<h3>一、logback简介以及快速使用</h3>
-- **logback介绍**
-　　Logback是由log4j创始人设计的又一个开源日志组件。它和log4j很像，是log4j的升级，相比log4j拥有更多的特性，同时也带来很大性能提升。在项目中将自己的日志系统更换为logback是一个不错的选择。
+&ensp;&ensp;&ensp;&ensp;Logback是由log4j创始人设计的又一个开源日志组件。它和log4j很像，是log4j的升级，相比log4j拥有更多的特性，同时也带来很大性能提升。在项目中将自己的日志系统更换为logback是一个不错的选择。
+
+### 一、logback简介以及快速使用
+
 - **logback组成**
+
 	- logback-core：日志组件的核心部分，要想使用该日志组件，必须拥有该jar包。
 	- logback-classic：实现了slf4j的API，所以当想配合slf4j使用时，必须将该jar包加入到classpath下。
 	- logback-access：为提供http访问日志的接口。  
-建议使用slf4j+logback实现日志记录功能，所以我们需要做的就是将logback-core和logback-classic两个jar包导入到项目的classpath下，当然不能忘记导入slf4j-api的jar包。
+
+&ensp;&ensp;&ensp;&ensp;建议使用slf4j+logback实现日志记录功能，所以我们需要做的就是将logback-core和logback-classic两个jar包导入到项目的classpath下，当然不能忘记导入slf4j-api的jar包。
+
 - **配置logback**
-　　配置logback需要将一个配置文件logback.xml或者logback-test.xml放在classpath下。如果配置文件 logback.xml 和 logback-test.xml 都不存在，那么 logback 默认地会调用BasicConfigurator ，创建一个最小化配置。最小化配置由一个关联到根 logger 的ConsoleAppender 组成。输出用模式为%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n的 PatternLayoutEncoder 进行格式化。根 logger 默认级别是 DEBUG。
-　　logback.xml的配置主要包括3部分，**Appender**,**Logger**,**Root**的配置。 logback 配置文件的语法非常灵活。正因为灵活，所以无法用 DTD 或 XML schema 进行定义。尽管如此，可以这样描述配置文件的基本结构：以configuration开头，后面有零个或多个appender元素，有零个或多个logger元素，有最多一个root元素。
+
+&ensp;&ensp;&ensp;&ensp;配置logback需要将一个配置文件logback.xml或者logback-test.xml放在classpath下。如果配置文件 logback.xml 和 logback-test.xml 都不存在，那么 logback 默认地会调用BasicConfigurator ，创建一个最小化配置。最小化配置由一个关联到根 logger 的ConsoleAppender 组成。输出用模式为%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n的 PatternLayoutEncoder 进行格式化。根 logger 默认级别是 DEBUG。
+
+&ensp;&ensp;&ensp;&ensp;logback.xml的配置主要包括3部分，**Appender**,**Logger**,**Root** 的配置。 logback 配置文件的语法非常灵活。正因为灵活，所以无法用 DTD 或 XML schema 进行定义。尽管如此，可以这样描述配置文件的基本结构：以configuration开头，后面有零个或多个appender元素，有零个或多个logger元素，有最多一个root元素。
 
 - **logback.xml**
 
@@ -70,30 +76,38 @@ tags: logback
 </configuration>
 ```
 　　
-<h3>二、logback配置文件详细说明</h3>
+### 二、logback配置文件详细说明
+
 - **根节点configuration**：
-　　包含如下属性：
+
+&ensp;&ensp;&ensp;&ensp;包含如下属性：
+
 	- scan:当此属性设置为true时，配置文件如果发生改变，将会被重新加载，默认值为true。
 	- scanPeriod:设置监测配置文件是否有修改的时间间隔，如果没有给出时间单位，默认单位是毫秒。当scan为true时，此属性生效。默认的时间间隔为1分钟。
 	- debug:当此属性设置为true时，将打印出logback内部日志信息，实时查看logback运行状态。默认值为false。
 
 - **根节点的子节点logger**:
-　　用来设置某一个包或者具体的某一个类的日志打印级别、以及指定appender。loger仅有一个name属性，一个可选的level和一个可选的addtivity属性。属性：
+
+&ensp;&ensp;&ensp;&ensp;用来设置某一个包或者具体的某一个类的日志打印级别、以及指定appender。loger仅有一个name属性，一个可选的level和一个可选的addtivity属性。属性：
+
 	- name:用来指定受此loger约束的某一个包或者具体的某一个类。
 	- level:用来设置打印级别，大小写无关：TRACE, DEBUG, INFO, WARN, ERROR, ALL 和 OFF，还有一个特俗值INHERITED或者同义词NULL，代表强制执行上级的级别。如果未设置此属性，那么当前loger将会继承上级的级别。
 	- addtivity:是否向上级loger传递打印信息。默认是true。
 loger可以包含零个或多个appender-ref元素，标识这个appender将会添加到该loger，或者说该logger供其他appender引用。
 
 - **根节点的子节点root**:
-　　它也是loger元素，但是它是根loger,其他logger都继承它。只有一个level属性定义日志级别。它已经被命名为"root"。其下可以包含零个或多个appender-ref元素，标识这个appender将会添加到这个loger，之后被appender元素引用。
+
+&ensp;&ensp;&ensp;&ensp;它也是loger元素，但是它是根loger,其他logger都继承它。只有一个level属性定义日志级别。它已经被命名为"root"。其下可以包含零个或多个appender-ref元素，标识这个appender将会添加到这个loger，之后被appender元素引用。
 
 - **根节点的子节点appender**:
-　　 该元素中定义日志日志的输入位置，输出样式，过滤条件等等。其中包括设置输出到控制台，或者每天保存一个日志文件，或者每天将日志文件压缩等等。它对应的appender的class都继承于类ch.qos.logback.core.OutputStreamAppender。该类的具体继承关系树形图如下：
+
+&ensp;&ensp;&ensp;&ensp;该元素中定义日志日志的输入位置，输出样式，过滤条件等等。其中包括设置输出到控制台，或者每天保存一个日志文件，或者每天将日志文件压缩等等。它对应的appender的class都继承于类ch.qos.logback.core.OutputStreamAppender。该类的具体继承关系树形图如下：
 ![logback](/assets/yoting/post/commonUtils/04.jpg)
 
 　　
-<h3>三、appender详细说明</h3>
-　　appender有两个必要属性name和class。**name**指定appender名称，**class**指定appender的全限定名。appender常用的class有三个，**ch.qos.logback.core.ConsoleAppender**：输出到控制台（有target和encoder子节点），**ch.qos.logback.core.FileAppender**或**ch.qos.logback.core.rolling.RollingFileAppender**：输出到文件或者滚动记录到文件（有file、prudent、encoder、append、rollingPolicy、triggeringPolicy等子节点）。具体节点意义如下：
+### 三、appender详细说明
+
+&ensp;&ensp;&ensp;&ensp;appender有两个必要属性name和class。**name** 指定appender名称，**class** 指定appender的全限定名。appender常用的class有三个，**ch.qos.logback.core.ConsoleAppender**：输出到控制台（有target和encoder子节点），**ch.qos.logback.core.FileAppender**或**ch.qos.logback.core.rolling.RollingFileAppender**：输出到文件或者滚动记录到文件（有file、prudent、encoder、append、rollingPolicy、triggeringPolicy等子节点）。具体节点意义如下：
 
 - **target**子节点：输入位置，字符串类型， System.out 或者 System.err ，默认 System.out。
 - **file**子节点：被写入的文件名，可以是相对目录，也可以是绝对目录，如果上级目录不存在会自动创建，没有默认值。
@@ -159,4 +173,4 @@ Caller+2   at mainPackage.ConfigTester.main(ConfigTester.java:38)
 %-4relative 表示，将输出从程序启动到创建日志记录的时间 进行左对齐 且最小宽度为4。​
 ```
 
-　　​至此，终于说完了lofback的一些基本使用方法，其实logback还很强大，如果需要，可以查看官方文档。
+&ensp;&ensp;&ensp;&ensp;至此，终于说完了lofback的一些基本使用方法，其实logback还很强大，如果需要，可以查看官方文档。

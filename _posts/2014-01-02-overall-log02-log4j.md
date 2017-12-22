@@ -5,8 +5,9 @@ date: 2015-03-03
 categories: "Overall"
 tags: log4j
 ---
-**第一部分：Log4j解释和使用演示**
-　　Log4j是Apache的一个开放源代码项目，通过使用Log4j，我们可以控制日志信息输送的目的地是控制台、文件、GUI组件，甚至是套接口服务器、NT的事件记录器、UNIX Syslog守护进程等；我们也可以控制每一条日志的输出格式；通过定义每一条日志信息的级别，我们能够更加细致地控制日志的生成过程。最令人感兴趣的就是，这些可以通过一个配置文件来灵活地进行配置，而不需要修改应用的代码。那么如何使用log4j为我们记录日志信息呢？只需要两个步骤，就可以灵活的完成日志记录到指定的地方。
+&ensp;&ensp;&ensp;&ensp;Log4j是Apache的一个开放源代码项目，通过使用Log4j，我们可以控制日志信息输送的目的地是控制台、文件、GUI组件，甚至是套接口服务器、NT的事件记录器、UNIX Syslog守护进程等；我们也可以控制每一条日志的输出格式；通过定义每一条日志信息的级别，我们能够更加细致地控制日志的生成过程。最令人感兴趣的就是，这些可以通过一个配置文件来灵活地进行配置，而不需要修改应用的代码。那么如何使用log4j为我们记录日志信息呢？只需要两个步骤，就可以灵活的完成日志记录到指定的地方。
+
+### **第一部分：Log4j解释和使用演示**
 
 - 第一步：配置log4j文件，这里有两种配置格式，一种是使用properties文件中的键值对方式，另一种是使用xml。一般都使用log4j.properties文件配置。在纯Java项目中，将这个文件放在src下面就可以了。下面是log4j.properties文件：在后面详细解释这个配置文件
 
@@ -72,12 +73,14 @@ A1:2014-09-20 19:08:06 com.swu.gusi.Log4jTest.main(Log4jTest.java:19) <DEBUG> [d
 hello wrold
 ```
 
-**第二部分：log4j配置解释**
-　　配置文件的作用总结就是：*告诉Log4J 把什么样的信息、以什么样的格式、输出到什么地方*。这样就可以很灵活的修改日志的输出格式，位置等等。
-　　Log4j主要由3部分组成：**Loggers**(记录器)，**Appenders** (输出源)和**Layouts**(布局)，这里可简单理解为日志类别，日志要输出的地方和日志以何种形式输出。综合使用这三个组件可以轻松的记录信息的类型和级别，并可以在运行时控制日志输出的样式和位置。下面对三个组件分别进行说明：
+### **第二部分：log4j配置解释**
+
+&ensp;&ensp;&ensp;&ensp;配置文件的作用总结就是：*告诉Log4J 把什么样的信息、以什么样的格式、输出到什么地方*。这样就可以很灵活的修改日志的输出格式，位置等等。
+
+&ensp;&ensp;&ensp;&ensp;Log4j主要由3部分组成：**Loggers**(记录器)，**Appenders** (输出源)和**Layouts**(布局)，这里可简单理解为日志类别，日志要输出的地方和日志以何种形式输出。综合使用这三个组件可以轻松的记录信息的类型和级别，并可以在运行时控制日志输出的样式和位置。下面对三个组件分别进行说明：
 
 <h4>1、loggers：记录器</h4>
-　　这里表示日志记录的级别，这里从高到低的级别是fatal>error>warn>info>debug>trace.分别用来指定这条日志信息的重要程度。log4j对logger级别的使用是如果设置的级别为level1，那么所有的比level1高的日志信息将显示，但是比level1低的级别日志信息将被屏蔽掉不显示，比如设置级别为warn级别，那么fatal和error以及warn级别的日志信息将输出，但是info和dubug级别的日志信息被屏蔽掉将不会输出。这个基本是配置在log4j.proterites文件中，当然也可在程序中设计这个级别。语法如下：
+&ensp;&ensp;&ensp;&ensp;这里表示日志记录的级别，这里从高到低的级别是fatal>error>warn>info>debug>trace.分别用来指定这条日志信息的重要程度。log4j对logger级别的使用是如果设置的级别为level1，那么所有的比level1高的日志信息将显示，但是比level1低的级别日志信息将被屏蔽掉不显示，比如设置级别为warn级别，那么fatal和error以及warn级别的日志信息将输出，但是info和dubug级别的日志信息被屏蔽掉将不会输出。这个基本是配置在log4j.proterites文件中，当然也可在程序中设计这个级别。语法如下：
 
 ```xml
 #配置根路径logger，所有的包路径下的日志都会使用这个logger
@@ -86,7 +89,7 @@ log4j.rootLogger = [ level ] , appenderName1, appenderName2, …
 log4j.logger.packagePath=[level],appenderName1,appenderName2,...
 ```
 
-　　我们可以配置一个公用的根路径的logger，也可以给不同的包路径下配置不同的logger。[level]表示日志记录级别，就是上面说到的fatal或者error等级别。后面的appenderName都是appender，这个可以配置多个不同的appender，表示需要将日志输出到不同的位置。appenderName这个名字是可以随便写的，只要在之后的配置中相同就可以，下面将会说明appender的配置。具体配置logger示例如下：
+&ensp;&ensp;&ensp;&ensp;我们可以配置一个公用的根路径的logger，也可以给不同的包路径下配置不同的logger。[level]表示日志记录级别，就是上面说到的fatal或者error等级别。后面的appenderName都是appender，这个可以配置多个不同的appender，表示需要将日志输出到不同的位置。appenderName这个名字是可以随便写的，只要在之后的配置中相同就可以，下面将会说明appender的配置。具体配置logger示例如下：
 
 ```xml
 #配置logger的级别为info,同时配置输出到Consele和File两个appender
@@ -94,7 +97,7 @@ log4j.rootLogger = info , Console，File
 ```
 
 <h4>2、appenders：输出源</h4>
-　　这里表示日志记录输出位置，我们输出到控制台、文件、甚至是自己写的输出到指定位置等等。语法如下：
+&ensp;&ensp;&ensp;&ensp;这里表示日志记录输出位置，我们输出到控制台、文件、甚至是自己写的输出到指定位置等等。语法如下：
 
 ```xml
 #配置appender对应的输出位置
@@ -105,7 +108,7 @@ log4j.appender.appenderName.option1 = value1
 log4j.appender.appenderName.option = valueN
 ```
 
-　　这里只需要指定对应appender的全类名，然后再配置这个appender的一些其他的信息即可。这里配置一个appender的其他信息的时候，可以配置多个不同的其他信息，比如配置输出到文件的时候需要配置文件的位置，书写方式等等信息。具体配置appender示例如下：
+&ensp;&ensp;&ensp;&ensp;这里只需要指定对应appender的全类名，然后再配置这个appender的一些其他的信息即可。这里配置一个appender的其他信息的时候，可以配置多个不同的其他信息，比如配置输出到文件的时候需要配置文件的位置，书写方式等等信息。具体配置appender示例如下：
 
 ```xml
 #首先配置logger
@@ -122,7 +125,7 @@ log4j.appender.file.Append=false
 log4j.paaender.file.File=C:/logFile.txt
 ```
 
-　　上面的详细配置示例是用到了控制台可文件，当然还有其他各种各种的appender供我们使用：（appender的类全名-appender下的选项参数配置）
+&ensp;&ensp;&ensp;&ensp;上面的详细配置示例是用到了控制台可文件，当然还有其他各种各种的appender供我们使用：（appender的类全名-appender下的选项参数配置）
 
 - org.apache.log4j.ConsoleAppender（输出到控制台）
         Threshold=WARN：指定日志消息的输出最低层次
@@ -159,7 +162,7 @@ log4j.paaender.file.File=C:/logFile.txt
 ![log4j](/assets/yoting/post/commonUtils/02.png)
 
 <h4>3、layouts：布局</h4>
-　　这里是表示输出的格式布局，可以以html形式，自己指定的灵活布局，包含日志信息级别和信息字符串，包换日产生时间线程类别信息等等格式。语法如下:
+&ensp;&ensp;&ensp;&ensp;这里是表示输出的格式布局，可以以html形式，自己指定的灵活布局，包含日志信息级别和信息字符串，包换日产生时间线程类别信息等等格式。语法如下:
 
 ```xml
 #配置appender的layout
@@ -168,7 +171,7 @@ log4j.paaender.file.File=C:/logFile.txt
 log4j.appender.appenderName.option1 = value1
 ```
 
-　　我们首先给appender指定一个layout，就是给layout指定一个类。然后给这个layout配置需要的参数信息。具体的layout配置示例如下：
+&ensp;&ensp;&ensp;&ensp;我们首先给appender指定一个layout，就是给layout指定一个类。然后给这个layout配置需要的参数信息。具体的layout配置示例如下：
 
 ```xml
 #首先配置logger
@@ -192,7 +195,7 @@ log4j.appender.file.layout=org.apache.log4j.HTMLLayout
 log4j.appender.file.layout.Title=testTitle
 ```
 
-　　上面只是用到了Pattrenlayout和HTMLLayout，还有一些其他的layout供我们使用：（layout类全名－layout下的参数配置）
+&ensp;&ensp;&ensp;&ensp;上面只是用到了Pattrenlayout和HTMLLayout，还有一些其他的layout供我们使用：（layout类全名－layout下的参数配置）
 
 - org.apache.log4j.PatternLayout(可灵活的指定布局模式)
 	ConVersionPattren=%m%n:指定怎样的格式化指定的消息，后面会详细说明各个字母含义
@@ -227,12 +230,14 @@ ConversionPattern的各个参数说明：
  3)%.30c:指定输出category的名称，最大的宽度是30，如果category的名称大于30的话，就会将左边多出的字符截掉，但小于30的话也不会有空格。
  4)%20.30c:如果category的名称小于20就补空格，并且右对齐，如果其名称长于30字符，就从左边超出的字符截掉。
 ```
-　　​上面的表格中只是列出了一些比较常用的layout和对应的layout的一些基本常用的可选配置信息，apache还给我们提供了很多其他的layout，下图可以看见所有apache提供的layout。
+
+&ensp;&ensp;&ensp;&ensp;​上面的表格中只是列出了一些比较常用的layout和对应的layout的一些基本常用的可选配置信息，apache还给我们提供了很多其他的layout，下图可以看见所有apache提供的layout。
 
 ![log4j](/assets/yoting/post/commonUtils/03.png)
 
-**第三部分：程序使用Log4j记录日志**
-　　​上面已经配置好了log4j的properties配置文件，我们在Java程序中按照一下步骤操作就可以：
+### **第三部分：程序使用Log4j记录日志**
+
+&ensp;&ensp;&ensp;&ensp;​上面已经配置好了log4j的properties配置文件，我们在Java程序中按照一下步骤操作就可以：
 
 - 1、建立Logger实例
 
@@ -242,7 +247,8 @@ static Logger logger = Logger.getLogger(Log4jTest.class);
 ```
 
 - 2、读取配置文件
-　　有3中读取方式，如果我么不写，默认读取classpath下的log4j.properties文件配置logger。
+
+&ensp;&ensp;&ensp;&ensp;有3中读取方式，如果我么不写，默认读取classpath下的log4j.properties文件配置logger。
 
 ```java
 BasicConfigurator.configure();	//默认使用输出控制台
@@ -267,4 +273,4 @@ logger.debug("[debug message]");
 logger.trace("[trace message]");
 ```
 ​
-　　​至此，终于说完了log4j的一些基本使用方法，其实log4j还很强大，如果需要，可以查看官方文档。
+&ensp;&ensp;&ensp;&ensp;​至此，终于说完了log4j的一些基本使用方法，其实log4j还很强大，如果需要，可以查看官方文档。

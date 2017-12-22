@@ -6,11 +6,11 @@ categories: Java
 tags: java环境变量
 ---
 
-　　接下来我们将开启我们的java编程之旅，路漫漫其修远兮！
+&ensp;&ensp;&ensp;&ensp;接下来我们将开启我们的java编程之旅，路漫漫其修远兮！
 
 **1、概念解释以及jdk安装**
 
-- jre:java runtime environment Java运行环境。jre=jvm(java虚拟机)+Java类库。
+- jre：java runtime environment Java运行环境。jre=jvm(java虚拟机)+Java类库。
 - jdk：java development kits Java开发工具包。jdk=jre+java开发工具。
 
 &ensp;&ensp;&ensp;&ensp;运行Java程序只需要有jre即可，jdk是专门为开发人员使用的。首先在开发机器上下载并安装jdk。
@@ -23,7 +23,7 @@ tags: java环境变量
 - Path=%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin; (在系统路径下加入)
 - CLASSPATE=.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;
 
-&ensp;&ensp;&ensp;&ensp;当然，可以不用配置JAVA_HOME,配置它只是为了配置Paht和CLASSPATE的时候方便
+&ensp;&ensp;&ensp;&ensp;当然，可以不用配置JAVA_HOME，配置它只是为了配置Paht和CLASSPATE的时候方便
 
 - Path：系统路径，使得Java内部指令可以在任何路径运行（比如javac命令）。如果没有配，那就只能在jdk的安装目录下运行javac命令。
 - Classpath：类路径，使得.class文件可以在特定的位置运行（比如java xxx.classpath），前面的”.;”表示当前路径，要是在当前路径找不到，就到指定的路径下面找。
@@ -63,3 +63,15 @@ public class HelloWorld{
 **4、下载IDE集成开发环境**
 
 &ensp;&ensp;&ensp;&ensp;可以使用eclipse，myeclipse，intelljIdea等。
+
+**5、Linux下配置Java环境变量**
+
+&ensp;&ensp;&ensp;&ensp;其实和Windows下基本相同，将对应的Jdk文件解压，的到一个目录比如：/usr/local/java/jdk_1.7.0，然后在系统配置文件/etc/profile文件末尾中添加以下环境变量：
+
+```properties
+export JAVA_HOME=/usr/local/java/jdk_1.7.0
+export PATH=$JAVA_HOME/bin:$PATH
+export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+```
+
+&ensp;&ensp;&ensp;&ensp;让上面的配置文件立即生效，再执行以下命令：source /etc/profile
