@@ -1,7 +1,7 @@
 ﻿# visit https://github.com/mojombo/jekyll/wiki/Configuration for more settings
 
 gems: [jekyll-paginate]
-paginate: 5 # pagination based on number of posts
+paginate: 10 # pagination based on number of posts
 paginate_path: "page:num"
 permalink: /:categories/:year/:month/:day/:title/
 exclude: ["README.txt"] # files to exclude
@@ -17,20 +17,13 @@ highlighter: pygments
 #  syntax_highlighter: rouge
 #  coderay:
 #    coderay_line_numbers:  nil
-markdown: redcarpet
+markdown: redcarpet2
 redcarpet:
   extensions: ["no_intra_emphasis", "tables", "autolink", "strikethrough", "fenced_code_blocks", "with_toc_data"]
 
 #source: DIR
 #destination: ../yoting.github.io
 include: [home]  #除了_post文件夹下的需要解析外，自定义_home下的也需要解析
-
-defaults:
-  -
-    scope:
-      path: "" # empty string for all files
-    values:
-      title: 孤思八九
 
 description: 生命不息，折腾不止，孤独思考，不瞎折腾！
 author:
