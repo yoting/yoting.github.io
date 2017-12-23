@@ -17,7 +17,7 @@ highlighter: pygments
 #  syntax_highlighter: rouge
 #  coderay:
 #    coderay_line_numbers:  nil
-markdown: redcarpet
+markdown: redcarpet2
 redcarpet:
   extensions: ["no_intra_emphasis", "tables", "autolink", "strikethrough", "fenced_code_blocks", "with_toc_data"]
 
@@ -30,7 +30,7 @@ defaults:
     scope:
       path: "" # empty string for all files
     values:
-      title: 孤思八九
+      title: 孤思八九hhhhh
 
 description: 生命不息，折腾不止，孤独思考，不瞎折腾！
 author:
