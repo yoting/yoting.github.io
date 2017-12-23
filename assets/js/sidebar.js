@@ -7,12 +7,14 @@ $( document ).ready(function() {
 	var quickMenuUl = $('#quick-menu-ul');
 	quickMenu.click(function(){
 		quickMenuDown.toggle(1000);
+		quickMenuUl.css("display",'none');
+		setTimeout(function showUl(){
+			quickMenuUl.css("display",'block');
+		},1000);
 		if(quickMenuLeft.attr("src").endsWith("open.png")){
 			quickMenuLeft.attr("src","/assets/ico/yanjing_close.png");
-			quickMenuUl.css("display",'none');
 		}else{
 			quickMenuLeft.attr("src","/assets/ico/yanjing_open.png");
-			quickMenuUl.css("display",'block');
 		}
 		if(quickMenuRight.attr("src").endsWith("open.png")){
 			quickMenuRight.attr("src","/assets/ico/yanjing_close.png");
