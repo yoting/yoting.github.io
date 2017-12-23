@@ -1,7 +1,7 @@
 ﻿# visit https://github.com/mojombo/jekyll/wiki/Configuration for more settings
 
 gems: [jekyll-paginate]
-paginate: 10 # pagination based on number of posts
+paginate: 5 # pagination based on number of posts
 paginate_path: "page:num"
 permalink: /:categories/:year/:month/:day/:title/
 exclude: ["README.txt"] # files to exclude
@@ -17,7 +17,7 @@ highlighter: pygments
 #  syntax_highlighter: rouge
 #  coderay:
 #    coderay_line_numbers:  nil
-markdown: redcarpet2
+markdown: redcarpet
 redcarpet:
   extensions: ["no_intra_emphasis", "tables", "autolink", "strikethrough", "fenced_code_blocks", "with_toc_data"]
 

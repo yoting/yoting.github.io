@@ -1,9 +1,8 @@
 ﻿<!-- sidebar.html -->
-<!--导航栏-->
 <nav class="navbar navbar-default" role="navigation" style="margin-top: -22px;">
     <div id="quick-menu-div" style="text-align: center;height: 43px; padding-top: 5px;" class="col-sm-12">
 	   <a href="{{ site.BASE_PATH}}/{{ site.categories_path}}"><img src="{{ site.BASE_PATH}}/assets/ico/yanjing_close.png" id="yanjing-left" class="col-sm-4"></a>
-     <img src="{{ site.BASE_PATH}}/assets/ico/mouth.jpg" id="quick-menu" class="col-sm-4">
+       <img src="{{ site.BASE_PATH}}/assets/ico/mouth.jpg" id="quick-menu" class="col-sm-4">
 	   <!--<span class="col-sm-4" id="quick-menu" style="color:#000;padding-top: 8px; padding-bottom: 0px;">快&nbsp;捷&nbsp;菜&nbsp;单</span>-->
 	   <a href="{{ site.BASE_PATH}}/{{ site.tags_path}}"><img src="{{ site.BASE_PATH}}/assets/ico/yanjing_close.png" id="yanjing-right" class="col-sm-4"></a>
     </div>
@@ -20,8 +19,6 @@
         </div>
     </div>
 </nav>
-
-<!--Logo头像-->
 <header class="sidebar-header" role="banner">
     <a href="{{ site.BASE_PATH }}/">
         <img src="{{site.BASE_PATH}}/assets/yoting/image/logo.jpg" class="img-circle" style="width:150px; height=150px; " />
@@ -30,15 +27,20 @@
         <a href="{{ site.BASE_PATH }}">{{ site.author.webname }}</a>
     </h3>
 </header>
+<!-- nav-menu-dropdown -->
+<!--
+<div class="btn-group hidden-xs" id="nav-menu" style="left: 45px;">
+	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+		<i class="fa fa-bars" style="width:180px;"> 快 捷 菜 单</i>
+	</button>
 
-<!--标语-->
+</div>
+-->
 {% if site.author.bio_sidebar %}
 <div id="bio" class="text-center">
     <h4>{{ site.author.bio_sidebar }}</h4>
 </div>
 {% endif %}
-
-<!--其他连接-->
 <div id="contact-list" class="text-center" style="margin-top: 30px;">
     <ul class="list-unstyled list-inline">
         {% if site.author.github %}
@@ -70,6 +72,7 @@
 </div>
 <br>
 
+{% include tags.html %}
 <!--<iframe name="tages" width=100% height=100% marginwidth=0 marginheight=0 frameborder="no" border="0"  src="tags.html" ></iframe> -->
 <!--
 <div id="show-info" class="col-sm-12 text-center" style="">
@@ -100,8 +103,6 @@
     <iframe width="200" height="100" frameborder="0" src="http://i.tianqi.com/index.php?c=code&amp;id=35&amp;icon=1&amp;num=3" allowtransparency="true" scrolling="no"></iframe>
 </div>
 -->
-
-<!--底部连接-->
 <div class="text-center navbar-fixed-bottom col-sm-2" style="margin-bottom: 20px;">
     {% if site.myinfo_path %}
     <span class="col-sm-4" id="myinfo"><a href="{{ site.BASE_PATH }}/{{ site.myinfo_path }}">关于博主</a></span>
