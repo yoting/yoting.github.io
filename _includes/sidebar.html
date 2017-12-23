@@ -2,14 +2,14 @@
 <nav class="navbar navbar-default" role="navigation" style="margin-top: -22px;">
     <div id="quick-menu-div" style="text-align: center;height: 43px; padding-top: 5px;" class="col-sm-12">
 	   <a href="{{ site.BASE_PATH}}/{{ site.categories_path}}"><img src="{{ site.BASE_PATH}}/assets/ico/yanjing_close.png" id="yanjing-left" class="col-sm-4"></a>
-       <img src="{{ site.BASE_PATH}}/assets/ico/line3.png" id="quick-menu" style="display:none" class="col-sm-4">
+       <img src="{{ site.BASE_PATH}}/assets/ico/line3.png" id="quick-menu" class="col-sm-4">
 	   <!--<span class="col-sm-4" id="quick-menu" style="color:#000;padding-top: 8px; padding-bottom: 0px;">快&nbsp;捷&nbsp;菜&nbsp;单</span>-->
 	   <a href="{{ site.BASE_PATH}}/{{ site.tags_path}}"><img src="{{ site.BASE_PATH}}/assets/ico/yanjing_close.png" id="yanjing-right" class="col-sm-4"></a>
     </div>
     <div id="quick-menu-down">
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <hr class="divider">
-            <ul id="quick-menu-ul" class="nav navbar-nav">
+            <ul id="quick-menu-ul" style="display:none" class="nav navbar-nav">
                 <li><a href="{{ site.BASE_PATH}}/"><i class="fa fa-home"></i>返回首页</a></li>
                 <li><a href="#"><i class="fa fa-arrow-up"></i>返回顶端</a></li>
                 <li><a href="{{ site.BASE_PATH}}/{{ site.categories_path }}"><i class="fa fa-folder"></i>博文分类</a></li>
