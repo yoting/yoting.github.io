@@ -52,6 +52,6 @@ categories_path: home/categories.html #文章分类页面
 tags_path: home/tags.html #文章标签页面
 webinfo_path: home/about/webinfo
 myinfo_path: home/about/myinfo
-resume_path: home/about/resume
+#resume_path: home/about/resume
 
 BASE_PATH:
