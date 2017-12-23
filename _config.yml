@@ -1,7 +1,7 @@
 ﻿# visit https://github.com/mojombo/jekyll/wiki/Configuration for more settings
 
 gems: [jekyll-paginate]
-paginate: 5 # pagination based on number of posts
+paginate: 10 # pagination based on number of posts
 paginate_path: "page:num"
 permalink: /:categories/:year/:month/:day/:title/
 exclude: ["README.txt"] # files to exclude
@@ -25,12 +25,13 @@ redcarpet:
 #destination: ../yoting.github.io
 include: [home]  #除了_post文件夹下的需要解析外，自定义_home下的也需要解析
 
+#设置所有页面的默认title
 defaults:
   -
     scope:
       path: "" # empty string for all files
     values:
-      title: 孤思八九hhhhh
+      title: 孤思八九
 
 description: 生命不息，折腾不止，孤独思考，不瞎折腾！
 author:
@@ -41,7 +42,7 @@ author:
   #twitter: none
   #pinterest: asd123
   #linkedin: asd123
-  webname: 孤思八九
+  webname: 孤独的思考者
   bio_sidebar: 生命不息  折腾不止
   bio: 生命不息，折腾不止，孤独思考，不瞎折腾！
   #email_md5: 726351295ec82e145928582f595aa3aa
