@@ -5,6 +5,9 @@ $( document ).ready(function() {
 	var quickMenuRight = $('#yanjing-right');
 	var quickMenuDown = $('#quick-menu-down');
 	var quickMenuUl = $('#quick-menu-ul');
+
+	quickMenuDown.css("display","none");
+
 	quickMenu.click(function(){
 		quickMenuDown.toggle(1000);
 		quickMenuUl.css("display",'none');
