@@ -13,7 +13,7 @@ $( document ).ready(function() {
 		quickMenuUl.css("display",'none');
 		setTimeout(function showUl(){
 			quickMenuUl.css("display",'block');
-		},1000);
+		},800);
 		if(quickMenuLeft.attr("src").endsWith("open.png")){
 			quickMenuLeft.attr("src","/assets/ico/yanjing_close.png");
 		}else{
