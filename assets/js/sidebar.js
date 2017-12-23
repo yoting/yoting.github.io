@@ -4,6 +4,7 @@ $( document ).ready(function() {
 	var quickMenuLeft = $('#yanjing-left');
 	var quickMenuRight = $('#yanjing-right');
 	var quickMenuDown = $('#quick-menu-down');
+	var quickMenuUl = $('#quick-menu-ul');
 	quickMenu.click(function(){
 		quickMenuDown.toggle(1000);
 		if(quickMenuLeft.attr("src").endsWith("open.png")){
@@ -18,22 +19,11 @@ $( document ).ready(function() {
 		}
 	})
 
-	var showQuickMenuDown=$('#show-quick-menu-down');
-	var showAttr = showQuickMenuDown.css("display");
-	if(showAttr=="none"){
-		quickMenuDown.hide();
-	}else{
-		quickMenuDown.hide(1000);
-	}
-
-
-
-
 	/* Secondary contact links */
 	var myinfo = $('#myinfo');
 	var webinfo = $('#webinfo');
 	var resume = $("#resume");
-    	if(resume.length>0){ 
+    	if(resume.length>0){
 		//	alert("display resume");
     	}else{
     		myinfo.removeClass('col-sm-4').addClass('col-sm-6');
@@ -58,7 +48,7 @@ $( document ).ready(function() {
 	var initializationTime=(new Date()).getTime();
 	var showTimeLabel = $("#show-time");
 	showTime(showTimeLabel);
-	
+
 });
 
 function showTime(showTimeLabel){

@@ -6,11 +6,10 @@
 	   <!--<span class="col-sm-4" id="quick-menu" style="color:#000;padding-top: 8px; padding-bottom: 0px;">快&nbsp;捷&nbsp;菜&nbsp;单</span>-->
 	   <a href="{{ site.BASE_PATH}}/{{ site.tags_path}}"><img src="{{ site.BASE_PATH}}/assets/ico/yanjing_close.png" id="yanjing-right" class="col-sm-4"></a>
     </div>
-    <div id="show-quick-menu-down" style="display:none;"></div>
     <div id="quick-menu-down">
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <hr class="divider">
-            <ul class="nav navbar-nav">
+            <ul id="quick-menu-ul" class="nav navbar-nav">
                 <li><a href="{{ site.BASE_PATH}}/"><i class="fa fa-home"></i>返回首页</a></li>
                 <li><a href="#"><i class="fa fa-arrow-up"></i>返回顶端</a></li>
                 <li><a href="{{ site.BASE_PATH}}/{{ site.categories_path }}"><i class="fa fa-folder"></i>博文分类</a></li>
