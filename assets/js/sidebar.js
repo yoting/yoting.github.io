@@ -9,8 +9,10 @@ $( document ).ready(function() {
 		quickMenuDown.toggle(1000);
 		if(quickMenuLeft.attr("src").endsWith("open.png")){
 			quickMenuLeft.attr("src","/assets/ico/yanjing_close.png");
+			quickMenuUl.attr("display",'none');
 		}else{
 			quickMenuLeft.attr("src","/assets/ico/yanjing_open.png");
+			quickMenuUl.attr("display",'block');
 		}
 		if(quickMenuRight.attr("src").endsWith("open.png")){
 			quickMenuRight.attr("src","/assets/ico/yanjing_close.png");
