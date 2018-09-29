@@ -1,3 +1,11 @@
+---
+layout: post
+title: 设计模式之适配器模式
+date: 2016-08-14
+categories: "Design_Pattern"
+tags: design adapter
+---
+
 ### 一：适配器模式的定义
 
 　　适配器模式：将一个类的接口转换成客户希望的另一个接口。适配器模式让那些接口不兼容的类可以一起工作
@@ -76,7 +84,7 @@ public class Adapter1 implements ITarget {
 
 	/**
 	 * 构造方法，传入需要被适配的对象
-	 * 
+	 *
 	 * @param adaptee 需要被适配的对象
 	 */
 	public Adapter1(Adaptee adaptee) {

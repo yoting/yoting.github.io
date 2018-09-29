@@ -3,7 +3,7 @@ layout: post
 title: 设计模式之桥接模式
 date: 2016-08-11
 categories: "Design_Pattern"
-tags: design proxy
+tags: design bridge
 ---
 
 ### 桥接模式定义
