@@ -62,7 +62,7 @@ public class SimpleFactory{
 }
 ```
 上面就是简单工厂模式,为了方便调用，将工厂的方法都设置成static，他的类图如下：
-
+![facotyUML](http://ox1nrsgam.bkt.clouddn.com/designerFactory.png)
 
 但是当我们现在除了通过邮件和短信，还需要通过微信发送消息，怎么办？我们需要新写一个WexinSender对象实现Sender接口，同时需要修改SimpleFactory，添加if分支或者添加方法去创建WexinSender对象，这样就破坏了开闭原则——对扩展开放，对修改封闭。此时我们可以使用抽象工厂模式来重构上面的结构。
 
@@ -154,4 +154,6 @@ public SmsFactory implement AbstractFactory{
 ```
 
 上面的代码对应的类图如下：
+![facotyUML](http://ox1nrsgam.bkt.clouddn.com/designerFactory.png)
+
 在使用时和上面相似，只需要通过对应的Factory创建对应的Sender和Reciever即可。假如需求更变态，要求的不是同类产品的产品族（这里邮件系统收发消息就属于同一产品族，短信收发消息属于另一产品族），比如他要求使用邮件发送消息，使用短信接受消息这样的一套产品，那么我们可以再建立一个XxxFactory去实现AbstractFactory，然后在实现createSender和createReceiver方法的时候，分别按照需求的制定去创建对应的Sender和Receiver即可。这里也就是强行将某几个非同类对象拉成同一产品族。 关于工厂模式的整体类图如下：包括简单工厂和抽象工厂 [image3]
