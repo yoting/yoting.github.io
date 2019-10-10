@@ -2,7 +2,7 @@
 layout: post
 title: 定时任务Quartz使用
 date: 2018-10-08
-categories: "overall"
+categories: "Overall"
 tags: quartz
 ---
 
