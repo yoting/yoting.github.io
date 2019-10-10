@@ -2,7 +2,7 @@
 layout: post
 title: Java多线程等待和恢复
 date: 2018-09-03
-categories: "Java"
+categories: Java
 tags: thread
 ---
 
