@@ -6,7 +6,7 @@ categories: Java
 tags: thread
 ---
 
-本文讲述多线程情况下的wait和notify的使用。首先看下Java关于这两类方法的api。
+​     本文讲述多线程情况下的wait和notify的使用。首先看下Java关于这两类方法的api。
 
 ### JavaAPI
 
@@ -80,7 +80,7 @@ public class MyThread {
 
 4、wait() 需要被try-catch包围，中断也可以使wait等待的线程唤醒。
 
-5、notify 和wait 的顺序不能错，如果A线程先执行notify方法，B线程在执行wait方法，那么B线程是无法被唤醒的。
+5、notify 和wait 的顺序不能错，如果A线程先执行notify方法，B线程再执行wait方法，那么B线程是无法被唤醒的。
 
 6、notify 和 notifyAll的区别
 
