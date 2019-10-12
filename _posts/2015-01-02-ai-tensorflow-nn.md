@@ -6,7 +6,7 @@ categories: AI
 tags: tensorflow
 ---
 
-
+本文主要讲述神经网络相关概念和tensorflow再神经网络中运用的相关术语。
 
 #### 深度学习涉及的概念
 

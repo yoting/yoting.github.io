@@ -37,3 +37,7 @@ categories: 文章分类
 tags: 标签
 ---
 ```
+
+文章图片引用
+
+![tipmsg](/assets/yoting/post/xxx/xxx.png)
