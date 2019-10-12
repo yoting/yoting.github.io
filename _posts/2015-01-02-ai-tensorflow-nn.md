@@ -8,9 +8,9 @@ tags: tensorflow
 
 本文主要讲述神经网络相关概念和tensorflow再神经网络中运用的相关术语。
 
-#### 深度学习涉及的概念
+### 深度学习涉及的概念
 
-##### 神经网络示意图
+ **神经网络示意图**
 
 ![img](https://img-blog.csdn.net/20180702102749705?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTQxMDU5ODc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
@@ -18,11 +18,11 @@ tags: tensorflow
 - 神经网络就是让得到的y去匹配样本训练数据x对应的的一个标签y_
 - 分为全连接神经网络、卷积神经网络、循环神经网络等
 
-##### 深度学习流程图
+ **深度学习流程图**
 
 ![img](https://img-blog.csdn.net/20180205220441254?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdGlhbl9xaW5nX2xlaQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
-##### 前向传播算法
+ **前向传播算法**
 
 - 前馈神经网络输入的$x$经过每一层的隐藏单元处理，最终产生输出的$y$。在训练过程中，前向传播会产生（计算）一个**损失函数**$J(w)$。计算前馈神经网络需要三部分信息：
   - 神经网络输入（经过提取的特征向量数据）
@@ -30,7 +30,7 @@ tags: tensorflow
   - 神经元中的参数
 - 该算法有一定的局限性。因为该算法是线性模型，对于非线性应用不能很好的处理。
 
-##### 激活函数：实现去线性化
+ **激活函数：实现去线性化**
 
 - 常用的激活函数有下面几种：
   - ReLU（整流线性单元）
@@ -38,7 +38,7 @@ tags: tensorflow
   - tanh（双曲正切）
 - 运用在输出单元上，让输出结果不再线性化。例如：a = tf.nn.reul(tf.matmul(x,w)+b)
 
-##### 损失函数
+ **损失函数**
 
 - 描述对问题的求解精度，预测答案和真实答案之间的距离
 - 交叉熵（Cross Entropy）：刻画的是两个概率分布（概率分布向量）之间的距离
@@ -57,7 +57,7 @@ tags: tensorflow
   - tensorflow主要使用where函数和greater()函数实现
   - 例如：loss=tf.reduce_sum(tf.where(tf.greater(y,y\_),(y-y\_)\*a,(y\_-y)\*b))
 
-##### 基于梯度的优化
+ **基于梯度的优化**
 
 - 假设$$w$$是函数的输入参数，$$J(w)$$ 是需要优化的函数，那么基于梯度的优化指的就是改变$$w$$以得到最大（最小）化的$$J(w)$$。
 
@@ -73,7 +73,7 @@ tags: tensorflow
   - 不是对全部训练数据上的损失函数进行优化，而是在每一轮迭代中随机选择某一个或多个训练数据上的损失函数进行梯度下降优化。
   - 缺点是在某些训练数据上的损失函数更小不代表全部训练数据上损失函数更小。
 
-  ```py
+  ```python
   # 定义当前正在训练的轮数
   training_step = tf.Variable(0) #会随着训练的进行同步增大
   learning_step = tf.train.GradientDescentOptimizer(0.8).minimize(loss,global_step=training_step)
@@ -82,13 +82,13 @@ tags: tensorflow
 
   
 
-##### 反向传播算法
+ **反向传播算法**
 
 - 反向传播算法允许来自损失函数的信息通过网络向后流动，以便计算梯度。
 - 通过一种简单而廉价的计算在所有参数上使用梯度下降算法，这样就能是神经网络模型能够得到在训练数据上尽可能小的损失函数。
 - 如果说梯度下降算法优化了单个参数的取值，那么反向传播算法则给出了一种高效的在所有参数上使用梯度下降算法。
 
-##### 学习率衰减算法
+ **学习率衰减算法**
 
 - 学习率通常用于控制梯度下降中的参数更新的幅度或速度。
 
@@ -110,7 +110,7 @@ tags: tensorflow
     - decay_rate：衰减系数
     - staircase：衰减方式。默认false表示指数形式的连续衰减，true表示decay_steps轮数后再更新学习率参数，一般使用global_step/decay_steps取近似值。这样就是一个阶梯函数。
 
-    ```py
+    ```python
     training_step = tf.Variable(0)
     decayed_learning_rate = tf.train.exponential_decay(0.8,training_step,100,0.9,True)
     #初始化学习率为0.8；训练轮数随着训练进行而同步增大；每进行100轮后学习率乘以0.9
@@ -123,7 +123,7 @@ tags: tensorflow
   - 分片常数学习率衰减
   - 多项式学习率衰减
 
-##### 拟合
+ **拟合**
 
 - 泛化误差：模型在未知新数据上得到的误差称为泛化误差，我们希望泛化误差很低
 
@@ -143,7 +143,7 @@ tags: tensorflow
 
   - tensorflow 使用L2正则化方法：
 
-    ```py
+    ```python
     # 用0.0001初始化L2正则化项的权重r
     regularizer = tf.contrib.layers.l2_regularizer(0.0001) #一般r都很小
     # 计算模型正则化损失
@@ -154,7 +154,7 @@ tags: tensorflow
 
 - Dropout方法：解决过拟合问题，训练中随机丢弃某个神经单元。
 
-##### 滑动平均模型
+ **滑动平均模型**
 
 - 用来估计变量的局部均值，使得变量的更新与一段时间内的历史取值有关。
 
@@ -164,7 +164,7 @@ tags: tensorflow
 
 - tensorflow使用ExponentialMovingAverage类实现该模型，具体示例代码：
 
-  ```py
+  ```python
   # 初始化一个滑动平均类，衰减率为0.99
   average_class = tf.train.ExponentialMovingAverage(0.99, training_step)
   # 定义更新滑动平均值的操作，训练所有变量
