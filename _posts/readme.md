@@ -7,12 +7,13 @@
 - 2012-01-xx-utils:所有工具介绍
 - 2013-01-xx-frame：所有的框架相关
 - 2014-01-xx-overall:所有综合内容
+- 2015-01-xx-ai:人工智能
 
 
 ### 文章命名规则
 - 日期顺序-分类-内容标签[number]-具体内容.md
 - 日期顺序按照分类来确定，保证相同的分类文章在一起
-- 分类是固定的几种（Java、Design_Pattern、Database、Frame、Overall、Common_Utils）大分类
+- 分类是固定的几种（Java、Design_Pattern、Database、Frame、Overall、Common_Utils、AI）大分类
 - 内容标签有相同的时候，按照自然数顺序累加
 - 具体内容是更详细的分类
 
@@ -23,6 +24,7 @@
 - Frame
 - Overall
 - Common_Utils
+- AI
 
 ### 文章内容头部
 
@@ -31,7 +33,7 @@
 layout: post
 title: 具体的文章标题
 date: 2016-08-31
-categories: "文章分类"
+categories: 文章分类
 tags: 标签
 ---
 ```
