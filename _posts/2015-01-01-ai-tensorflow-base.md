@@ -24,7 +24,7 @@ tags: tensorflow
 
 ![tensorflow](/assets/yoting/post/ai/TensorFlow01.png)
 
-#### Graph(图）
+**Graph(图）**
 
 Tensorflow中使用tf.Graph类表示可计算的图。图是由操作Operation和张量Tensor来构成，其中Operation表示图的节点（即计算单元），而Tensor则表示图的边（即Operation之间流动的数据单元）。
 
@@ -32,7 +32,7 @@ Tensorflow中使用tf.Graph类表示可计算的图。图是由操作Operation�
 
 - 获取默认图：tf.get_default_graph()
 
-#### Operation(操作，节点）
+ **Operation(操作，节点）**
 
 一个Operation就是Tensorflow Graph中的一个计算节点。其接收零个或者多个Tensor对象作为输入，然后产生零个或者多个Tensor对象作为输出。
 
@@ -42,7 +42,7 @@ Tensorflow中使用tf.Graph类表示可计算的图。图是由操作Operation�
 
 - 常用方式：直接调用Python operation方法（例如tf.matmul()）
 
-#### Tensor(张量，连线)
+**Tensor(张量，连线)**
 
 Tensor表示的是Operation的输出结果。不过Tensor只是一个符号句柄，其并没有保存Operation输出结果的值。需要通过调用Session.run(tensor)或者tensor.eval()方可获取该Tensor的值。
 
@@ -64,7 +64,7 @@ Tensor表示的是Operation的输出结果。不过Tensor只是一个符号句�
 
 - 其他各种操作：...
 
-#### Session(会话）
+**Session(会话）**
 
 Session提供了Operation执行和Tensor求值的环境。
 
@@ -74,7 +74,7 @@ Session提供了Operation执行和Tensor求值的环境。
 
 - 关闭会话：sess.close()
 
-#### Variable(变量)
+**Variable(变量)**
 
 在Tensorflow中当训练模型时，用变量来存储和更新参数。变量的申明函数Variable会被当最一个运算来处理，这个运算的输出结果就是要给张量（Tensor），变量包含张量存放于内存的缓存区。建模时它们需要被明确地初始化，模型训练后它们必须被存储到磁盘。值可在之后模型训练和分析时被加载。
 
