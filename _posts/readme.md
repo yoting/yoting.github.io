@@ -26,7 +26,20 @@
 - Common_Utils
 - AI
 
-### 文章内容头部
+### 文章标签
+
+- java、jvm、case、design
+- mysql、mongo、redis、mybatis
+- dobbo、spring、netty
+- log、maven、zookeeper、websocket、session&cookie、quartz
+- utils
+- tensorflow
+
+<hr>
+
+### 快捷复制
+
+#### 文章内容头部
 
 ```xml
 ---
@@ -38,6 +51,6 @@ tags: 标签
 ---
 ```
 
-文章图片引用
+#### 文章图片引用
 
 ![tipmsg](/assets/yoting/post/xxx/xxx.png)
