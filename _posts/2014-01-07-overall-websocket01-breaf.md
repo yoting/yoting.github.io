@@ -2,7 +2,7 @@
 layout: post
 title: Websocket介绍和简单使用
 date: 2017-11-19
-categories: "Frame"
+categories: overall
 tags: websocket
 ---
 &emsp;&emsp;&emsp;&emsp;随着H5的技术的成熟，现在越来越多的产品前段都使用H5完成，但是前端页面和后台数据通信一直是一个比较难处理的问题。辛好WebSocket的诞生解决了这一问题。

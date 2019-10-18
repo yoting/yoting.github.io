@@ -2,8 +2,8 @@
 layout: post
 title: Websocket使用STOMP协议
 date: 2017-11-21
-categories: "Frame"
-tags: websocket stomp
+categories: overall
+tags: websocket
 ---
 &ensp;&ensp;&ensp;&ensp;上一篇介绍了Websocket的相关概念以及简单的使用，接下来介绍通过STOMP协议，使用WebSocket来进行网页端和服务端的数据交互。
 
