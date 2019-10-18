@@ -3,7 +3,7 @@ layout: post
 title: Java解析某个package
 date: 2015-04-09
 categories: Java
-tags: package JarEntity
+tags: java
 ---
 　　任务需求：读取一个package路径下面所有的class。来源可能是是普通文件系统中的文件夹，也可能是jar包文件。起初觉得很简单，只需要通过IO流找到文件，然后取出下面的所有文件，然后通过反射得到Class对象。但是发现从普通文件包下面这样做很容易，但是要是package在一个jar文件的下，这就比价麻烦了，因为我们不能通过文件对象File那样直接定位到jar文件下面的内容。所以我们需要使用特殊的方式。
 

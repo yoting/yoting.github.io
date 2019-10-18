@@ -3,7 +3,7 @@ layout: post
 title: 设计模式之原型模式
 date: 2016-08-15
 categories: "Design_Pattern"
-tags: design prototype
+tags: design
 ---
 
 ### 原型模式概念

@@ -3,7 +3,7 @@ layout: post
 title: Java获取线程执行结果
 date: 2016-06-09
 categories: Java
-tags: java多线程
+tags: java
 ---
 &ensp;&ensp;&ensp;&ensp;在使用多线程执行某些任务的时候，我们通常会使用Runnable接口或者Thread类完成。但是这两种方式都没法获取线程执行结束以后返回的结果，如果我们要获取某个线程执行完成以后返回的结果，java中给我们提供了Callable和Future以及FutureTask可以达到获取线程执行结果的方式。
 

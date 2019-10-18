@@ -3,7 +3,7 @@ layout: post
 title: java对象克隆
 date: 2018-08-31
 categories: Java
-tags: clone
+tags: java
 ---
 
 ​	    对象深度复制一般有两种方式，一种是通过反射，一种是通过复制字节码。如果通过字节码复制需要复制对象实现seriailzer接口。如果是反射则不需要，另外通过反射的方式效率会比较高点，但是通过字节码的方式简单点。具体代码可如下：

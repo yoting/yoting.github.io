@@ -3,7 +3,7 @@ layout: post
 title: ThreadLocal的使用介绍
 date: 2016-09-08
 categories: Java
-tags: java多线程 ThreadLocal
+tags: java
 ---
 &ensp;&ensp;&ensp;&ensp;在多线程下执行某个任务或者方法的时候，我们可能需要让某些变量或者对象的属性在每个线程中相对独立，互不影响。如果我们只是简单的使用对象的属性来存储该变量，T1线程对其的操作势必会影响到T2线程对其的使用。怎么办呢？使用ThreadLocal解决线程之间参数传递以及线程之间参数隔离。
 

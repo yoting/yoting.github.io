@@ -3,7 +3,7 @@ layout: post
 title: Java开发环境搭建
 date: 2014-07-01
 categories: Java
-tags: java环境变量
+tags: java
 ---
 
 &ensp;&ensp;&ensp;&ensp;接下来我们将开启我们的java编程之旅，路漫漫其修远兮！

@@ -3,7 +3,7 @@ layout: post
 title: Java的foreach循环中删除集合元素
 date: 2014-10-02
 categories: Java
-tags: Java集合
+tags: java
 ---
 
 　　在集合操作的时候，我们通常会使用foreach增强for循环遍历集合，比如我们想输出集合中的每个元素，我们可以使用for循环遍历。代码如下：

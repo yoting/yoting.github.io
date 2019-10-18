@@ -3,7 +3,7 @@ layout: post
 title: 设计模式之装饰器模式
 date: 2016-08-20
 categories: "Design_Pattern"
-tags: design decorate
+tags: design
 ---
 
 ### 装饰器模式概念：

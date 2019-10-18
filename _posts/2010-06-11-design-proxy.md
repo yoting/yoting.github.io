@@ -3,7 +3,7 @@ layout: post
 title: 设计模式之代理模式
 date: 2016-08-09
 categories: "Design_Pattern"
-tags: design proxy
+tags: design
 ---
 
 ### 代理模式概念

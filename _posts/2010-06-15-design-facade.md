@@ -3,7 +3,7 @@ layout: post
 title: 设计模式之门面模式
 date: 2016-08-10
 categories: "Design_Pattern"
-tags: design facade
+tags: design
 ---
 
 ### 门面模式概念

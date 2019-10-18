@@ -3,7 +3,7 @@ layout: post
 title: Java反射基石Class类
 date: 2014-10-29
 categories: Java
-tags: Java反射 Class类
+tags: java
 ---
 　　Java是一门面向对象的编程语言，java程序中的各个java类也属于同一类事物（是一个对象），描述这类事物的java类就是Class。对于这样的一个类，也有他自己的属性和方法，等等。Java中使用字节码来将类的各种信息保存在硬盘上，当我们需要使用一个类的时候，就会加载对应类在硬盘上的字节码。
 

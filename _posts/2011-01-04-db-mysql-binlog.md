@@ -3,7 +3,7 @@ layout: post
 title: MySql日志binlog介绍
 date: 2017-11-31
 categories: "Database"
-tags: mysql binlog
+tags: mysql
 ---
 
 &ensp;&ensp;&ensp;&ensp;MySql在运行的过程中会产生一些日志，而现在对于主从数据的一致性同步问题，以及数据库恢复，数据库优化，数据库异常排查等动作都是同基于MySql的产生的日志来实现的。

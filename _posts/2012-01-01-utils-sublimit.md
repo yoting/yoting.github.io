@@ -3,7 +3,7 @@ layout: post
 title: sublimit编辑器使用介绍
 date: 2017-04-19
 categories: "Common_Utils"
-tags: sublimit
+tags: utils
 ---
 &ensp;&ensp;&ensp;&ensp;sublime text是个超级好用的文本编辑器，再配合上一些插件使用，简直爽到爆。那么问题来了，插件如何安装，我们首先是安装一个安装插件的插件——PackageControl，有了它，想安装什么插件就安装什么插件。那么如何安装Package Control呢?
 

@@ -3,7 +3,7 @@ layout: post
 title: logback介绍
 date: 2015-03-02
 categories: "Overall"
-tags: logback
+tags: log
 ---
 
 &ensp;&ensp;&ensp;&ensp;Logback是由log4j创始人设计的又一个开源日志组件。它和log4j很像，是log4j的升级，相比log4j拥有更多的特性，同时也带来很大性能提升。在项目中将自己的日志系统更换为logback是一个不错的选择。

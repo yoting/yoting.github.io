@@ -3,7 +3,7 @@ layout: post
 title: Java泛型的使用
 date: 2014-11-29
 categories: Java
-tags: java泛型
+tags: java
 ---
 **1.普通的泛型使用**
 

@@ -3,7 +3,7 @@ layout: post
 title: Java多线程等待和恢复
 date: 2018-09-03
 categories: Java
-tags: thread
+tags: java
 ---
 
 ​     本文讲述多线程情况下的wait和notify的使用。首先看下Java关于这两类方法的api。

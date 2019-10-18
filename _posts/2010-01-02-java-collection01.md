@@ -3,7 +3,7 @@ layout: post
 title: Java集合和数组的转换
 date: 2014-10-01
 categories: Java
-tags: Java集合
+tags: java
 ---
 
 &ensp;&ensp;&ensp;&ensp;对集合和数组的使用在实际开发中很常用，但有时候需要将集合转换为数组，或者将数组转换为集合，这种情况我可以使用第三方提供的工具包，比如apache的common-utils等。当然我也也可以使用Java自生提供的一些快捷功能完成该功能。这样可以避免引入其他jar包。虽然Java提供了相互转换的工具，但是我们使用的时候需要注意，不能乱用滥用。

@@ -3,7 +3,7 @@ layout: post
 title: 设计模式之适配器模式
 date: 2016-08-14
 categories: "Design_Pattern"
-tags: design adapter
+tags: design
 ---
 
 ### 一：适配器模式的定义
