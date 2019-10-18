@@ -45,11 +45,14 @@ tags: zookeeper
     集群配置：server.id=host:port1:port2
 
     - id是集群的序号，每个实例需要在dataDir目录下创建实例的序号，文件名称为myid，文件内容为id的具体的编号，必须手动创建
-
     - host是实例所在的设备的ip地址
     - port1是leader和fllower实例进行数据交互的通信端口
     - port2是选举leader的通信端口
     - 如果是伪集群配置在一台机器上，需要各个port1和port2不同
+
+    集群结构图：
+
+    ![zookeeper](/assets/yoting/post/overall/zkservice.jpg)
 
 - **启动**
   
